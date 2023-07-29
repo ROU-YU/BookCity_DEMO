@@ -32,7 +32,7 @@ const config = ({ mode }) => {
         input: path.resolve(__dirname, 'index.html'),
         output: {
           chunkFileNames: 'js/[name].[hash].js',
-          entryFileNames: 'js/[name].[hash].js',
+          entryFileNames: 'js/[name].[hash].js'
           // assetFileNames: "assets/[name].[hash].[ext]",
         }
       }
