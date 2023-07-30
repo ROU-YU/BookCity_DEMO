@@ -4,18 +4,18 @@ export default [
   {
     path: '/',
     name: 'home',
-    redirect: '/interview/home',
+    redirect: '/home',
     component: Main,
     meta: {
       hideInMenu: true
     },
     children: [
       {
-        path: '/interview/home',
+        path: '/home',
         name: 'home',
         meta: {
           hideInMenu: true,
-          title: 'home',
+          title: '首頁',
           icon: 'md-home'
         },
         component: () => import('@/views/Home')
@@ -23,16 +23,16 @@ export default [
     ]
   },
   {     
-    path: '/interview/toDoList',
+    path: '/toDoList',
     name: 'to_do_list',
     component: Main,
     children: [
       {
-        path: '/interview/toDoList',
+        path: '/toDoList',
         name: 'to_do_list',
         meta: {
           icon: 'md-clipboard',
-          title: 'to_do_list'
+          title: '待辦事項'
         },
         component: () => import('@/views/subject_1/toDoList')
       }
@@ -40,16 +40,16 @@ export default [
     
   },
   {
-    path: '/interview/mealTime',
+    path: '/mealTime',
     name: 'meal_time',
     component: Main,
     children: [
       {
-        path: '/interview/mealTime',
+        path: '/mealTime',
         name: 'meal_time',
         meta: {
           icon: 'md-list-box',
-          title: 'meal_time'
+          title: '提供時段'
         },
         component: () => import('@/views/subject_2/mealTime')
       }
