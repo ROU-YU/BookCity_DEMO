@@ -1,12 +1,12 @@
 <template>
   <div class="form">
-    <h1>
+    <h1 class="str">
       {{ $t('plz_set_meals_time') }}
     </h1>
     <Row
       v-for="(day, index) in weekDayData"
       :key="`day-${index}`"
-      style="margin: 15px auto 15px auto"
+      class="row"
       justify="center"
       align="middle"
     >
@@ -29,14 +29,13 @@
           v-else
           justify="space-around"
           :gutter="10"
+          style="height: 120px"
         >
           <Col span="10">
-            <span slot="label">
-              {{ $t('start_time') }}
-            </span>
             <Select
               v-model="day.startIndex"
               clearable
+              :placeholder="$t('plz_choose_start_time')"
               @on-change="startTimeChange($event, index)"
             >
               <Option
@@ -50,12 +49,10 @@
             </Select>
           </Col>
           <Col span="10">
-            <span slot="label">
-              {{ $t('end_time') }}
-            </span>
             <Select
               v-model="day.endIndex"
               clearable
+              :placeholder="$t('plz_choose_start_time')"
               @on-change="endTimeChange($event, index)"
             >
               <Option
@@ -71,7 +68,7 @@
         </Row>
       </Col>
     </Row>
-      <Button type="primary" @click="handleOk">{{ $t('send') }}</Button>
+      <Button class="ok-btn" type="primary" @click="handleOk">{{ $t('send') }}</Button>
   </div>
 </template>
 <script>
@@ -251,17 +248,28 @@ export default {
   border-color: black;
   background-color: palegoldenrod;
   width: 800px;
-  margin: 20px auto 0 auto;
+  margin: 10px auto 20px auto;
   padding: 10px 10px 10px 10px;
 }
+
 .str {
-  margin: auto 10px auto;
+  font-size: 40px;
+  margin: 0 0 10px 0;
+  text-align: center;
+  height: 50px;
 }
+
+.row {
+  margin: 15px auto 15px auto;
+  height: 50px;
+}
+
 .form-div {
   height: 200px;
 }
 
 .ok-btn {
-  margin: 0 auto;
+  margin: 0 40%;
+  width: 200px;
 }
 </style>

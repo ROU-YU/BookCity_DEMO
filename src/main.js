@@ -4,10 +4,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vueI18n from './locale'
+import config from './config'
 import './styles/index.less'
 // import './mock'
 
 const app = createApp(App)
+
+app.config.globalProperties.$config = config
 
 app.use(router)
   .use(store)

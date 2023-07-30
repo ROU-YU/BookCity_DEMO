@@ -15,8 +15,12 @@ export default {
   friday: '星期五',
   saturday: '星期六',
   no_food: '本日不供應餐點',
-  start_time: '開始時間',
-  end_time: '結束時間',
+  plz_choose_start_time: '請選擇開始時間',
+  plz_choose_end_time: '請選擇結束時間',
   send: '送出',
-  add: '新增'
+  add: '新增',
+  //首頁
+  construction: '施工中...',
+  meal_time: '提供時段',
+  
 }

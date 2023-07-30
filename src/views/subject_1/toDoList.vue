@@ -1,6 +1,43 @@
 <template>
   <Card dis-hover class="card">
     <h1 class="to-do-list">{{ $t('to_do_list') }}</h1>
+    <span class="center">
+      <Button
+        size="large"
+        class="center-btn"
+        :type="type === 'all' ? 'primary' : 'default'"
+        @click="changeType('all')"
+      >
+        {{ $t('all') }}
+        <Badge
+          type="normal"
+          :count="allCount"
+        />
+      </Button>
+      <Button
+        size="large"
+        class="center-btn"
+        :type="type === 'process' ? 'primary' : 'default'"
+        @click="changeType('process')"
+      >
+        {{ $t('process') }}
+        <Badge
+          :type="type === 'process' ? 'normal' : 'error'"
+          :count="processCount"
+        />
+      </Button>
+      <Button
+        size="large"
+        :type="type === 'completed' ? 'primary' : 'default'"
+        @click="changeType('completed')"
+      >
+        {{ $t('completed') }}
+        <Badge
+          type="normal"
+          :count="completedCount"
+        />
+      </Button>
+    </span>
     <Input
       v-model="newList"
       class="input"
@@ -59,45 +96,7 @@
           />
         </Button>
       </Col>
-      <Divider/>
     </Row>
-    <span class="center">
-      <Button
-        size="large"
-        class="center-btn"
-        :type="type === 'all' ? 'primary' : 'default'"
-        @click="changeType('all')"
-      >
-        {{ $t('all') }}
-        <Badge
-          type="normal"
-          :count="allCount"
-        />
-      </Button>
-      <Button
-        size="large"
-        class="center-btn"
-        :type="type === 'process' ? 'primary' : 'default'"
-        @click="changeType('process')"
-      >
-        {{ $t('process') }}
-        <Badge
-          :type="type === 'process' ? 'normal' : 'error'"
-          :count="processCount"
-        />
-      </Button>
-      <Button
-        size="large"
-        :type="type === 'completed' ? 'primary' : 'default'"
-        @click="changeType('completed')"
-      >
-        {{ $t('completed') }}
-        <Badge
-          type="normal"
-          :count="completedCount"
-        />
-      </Button>
-    </span>
   </Card>
 </template>
 
@@ -174,8 +173,10 @@ export default {
 }
 
 .to-do-list {
-  font-size: 20px;
+  font-size: 40px;
   margin: 0 0 10px 0;
+  text-align: center;
+  height: 50px;
 }
 
 .input {
@@ -183,7 +184,8 @@ export default {
 }
 
 .row {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
+  height: 60px;
 }
 
 .edit-btn {
@@ -197,6 +199,7 @@ export default {
 .center {
   text-align: center;
   display:block;
+  height: 90px;
 }
 
 .center-btn {

@@ -1,5 +1,5 @@
 <template>
-  <Demo/>
+  <h1 class="demo">{{ $t('construction') }}</h1>
 </template>
 
 <script>
@@ -18,4 +18,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  .demo{
+    color: lightcoral;
+    font-size: 50px;
+    text-align: center;
+    margin: 300px 0 0 0;
+  }
 </style>
