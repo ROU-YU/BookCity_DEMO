@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import routes from './routers'
 import config from '../config'
 import iView from 'view-ui-plus'
 
 const router = createRouter({
   routes,
-  history: createWebHistory()
+  history: createWebHashHistory()
 })
 
 router.afterEach((to, from, next) => {

@@ -34,25 +34,9 @@ export default [
           icon: 'md-clipboard',
           title: '待辦事項'
         },
-        component: () => import('@/views/subject_1/toDoList')
+        component: () => import('@/views/toDoList/toDoList')
       }
     ]
     
-  },
-  {
-    path: '/mealTime',
-    name: 'meal_time',
-    component: Main,
-    children: [
-      {
-        path: '/mealTime',
-        name: 'meal_time',
-        meta: {
-          icon: 'md-list-box',
-          title: '提供時段'
-        },
-        component: () => import('@/views/subject_2/mealTime')
-      }
-    ]
   }
 ]

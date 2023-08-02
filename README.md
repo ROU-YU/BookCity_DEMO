@@ -1,4 +1,4 @@
-# view-ui-project-vite
+# ToDoList
 This project build for Vue3, Vue-router, Vuex, ViewUIPlus and Vite.
 ## Install
 ```shell
