@@ -10,7 +10,7 @@ const config = ({ mode }) => {
   const env = loadEnv(mode, process.cwd())
   const { APP_TITLE = '' } = loadEnv(mode, process.cwd(), envPrefix)
   return {
-    base: env === 'production' ? '/interview/' : './',
+    base: '/interview/',
     plugins: [
       vue(),
       createHtmlPlugin({
